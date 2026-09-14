@@ -1,0 +1,32 @@
+[
+  {
+    "query": "How many PTO days do full-time employees accrue per year?",
+    "expected_output": "Full-time employees accrue 15 PTO days per year, increasing to 20 days after 3 years of tenure.",
+    "relevant_doc_ids": ["kb-002"]
+  },
+  {
+    "query": "What's Acme's remote work policy?",
+    "expected_output": "Employees may work remotely up to 3 days per week with manager approval; fully remote arrangements need VP sign-off.",
+    "relevant_doc_ids": ["kb-001"]
+  },
+  {
+    "query": "Do I need pre-approval for a $50 expense?",
+    "expected_output": "No — expenses under $75 don't require pre-approval, but need a receipt submitted within 30 days.",
+    "relevant_doc_ids": ["kb-003"]
+  },
+  {
+    "query": "How do I reset my AcmeChat password?",
+    "expected_output": "Reset it yourself via the self-service portal at password.acme.internal; IT help desk resets are only for accounts locked after 5 failed attempts.",
+    "relevant_doc_ids": ["kb-005"]
+  },
+  {
+    "query": "How long is parental leave at Acme Corp?",
+    "expected_output": "16 weeks of paid leave for the primary caregiver and 8 weeks for the secondary caregiver, within 12 months of birth or adoption.",
+    "relevant_doc_ids": ["kb-006"]
+  },
+  {
+    "query": "What wifi network should employees use for internal access?",
+    "expected_output": "Employees should use Acme-Secure, authenticated via SSO, for access to internal resources.",
+    "relevant_doc_ids": ["kb-008"]
+  }
+]

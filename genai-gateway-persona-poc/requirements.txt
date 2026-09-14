@@ -1,0 +1,6 @@
+opik>=2.2.0
+openai
+anthropic
+python-dotenv
+numpy
+scipy

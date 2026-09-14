@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+
+# Generated locally by 01_drift_and_missing_values.py -- regenerable, and
+# timestamps are relative to "now" so committing them would go stale.
+data/*.csv
+data/*.joblib

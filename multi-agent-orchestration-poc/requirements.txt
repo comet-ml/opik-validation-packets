@@ -1,0 +1,6 @@
+opik>=2.2.0
+agent-framework-core
+agent-framework-openai
+opentelemetry-exporter-otlp-proto-http
+python-dotenv
+numpy

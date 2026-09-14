@@ -1,0 +1,53 @@
+[
+  {
+    "sku": "SKU-001",
+    "region": "US-East",
+    "current_stock": 1200,
+    "reorder_point": 400,
+    "forecast_next_period": 950,
+    "forecast_trend": "stable",
+    "anomaly": {"detected": false, "description": null}
+  },
+  {
+    "sku": "SKU-002",
+    "region": "US-West",
+    "current_stock": 150,
+    "reorder_point": 300,
+    "forecast_next_period": 800,
+    "forecast_trend": "rising",
+    "anomaly": {"detected": false, "description": null}
+  },
+  {
+    "sku": "SKU-003",
+    "region": "US-East",
+    "current_stock": 60,
+    "reorder_point": 200,
+    "forecast_next_period": 1400,
+    "forecast_trend": "rising",
+    "anomaly": {
+      "detected": true,
+      "description": "Demand spiked roughly 3x over the past 2 weeks vs. the prior 8-week average, likely a regional promotion."
+    }
+  },
+  {
+    "sku": "SKU-004",
+    "region": "EU-Central",
+    "current_stock": 500,
+    "reorder_point": 250,
+    "forecast_next_period": 480,
+    "forecast_trend": "stable",
+    "anomaly": {"detected": false, "description": null}
+  },
+  {
+    "sku": "SKU-005",
+    "region": "EU-Central",
+    "current_stock": 900,
+    "reorder_point": 350,
+    "forecast_next_period": 300,
+    "forecast_trend": "falling",
+    "anomaly": {
+      "detected": true,
+      "description": "Demand dropped sharply after a competitor product launch two weeks ago."
+    }
+  }
+]

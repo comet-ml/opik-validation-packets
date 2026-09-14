@@ -1,0 +1,62 @@
+[
+  {
+    "id": "kb-001",
+    "title": "Remote Work Policy",
+    "category": "hr",
+    "content": "Acme Corp employees may work remotely up to 3 days per week with manager approval. Fully remote arrangements require VP sign-off and are reviewed quarterly."
+  },
+  {
+    "id": "kb-002",
+    "title": "Paid Time Off (PTO)",
+    "category": "hr",
+    "content": "Full-time employees accrue 15 PTO days per year, increasing to 20 days after 3 years of tenure. PTO requests must be submitted at least 5 business days in advance via the HR portal."
+  },
+  {
+    "id": "kb-003",
+    "title": "Expense Reimbursement",
+    "category": "finance",
+    "content": "Business expenses under $75 do not require pre-approval but must be submitted with a receipt within 30 days. Expenses over $75 require manager pre-approval before the purchase is made."
+  },
+  {
+    "id": "kb-004",
+    "title": "VPN Access",
+    "category": "it",
+    "content": "All remote connections to internal systems must go through the corporate VPN client. VPN credentials are issued by IT on your first day and rotate every 90 days."
+  },
+  {
+    "id": "kb-005",
+    "title": "Password Reset Procedure",
+    "category": "it",
+    "content": "Employees can reset their AcmeChat SSO password via the self-service portal at password.acme.internal. IT help desk resets are only available for accounts locked after 5 failed attempts."
+  },
+  {
+    "id": "kb-006",
+    "title": "Parental Leave",
+    "category": "hr",
+    "content": "Acme Corp offers 16 weeks of paid parental leave for the primary caregiver and 8 weeks for the secondary caregiver, available within the first 12 months after birth or adoption."
+  },
+  {
+    "id": "kb-007",
+    "title": "Laptop Refresh Cycle",
+    "category": "it",
+    "content": "Company laptops are refreshed every 3 years. Employees can request an early refresh through IT if hardware issues impact productivity, subject to manager approval."
+  },
+  {
+    "id": "kb-008",
+    "title": "Wifi and Office Network Access",
+    "category": "it",
+    "content": "Guests can access the Acme-Guest wifi network without a badge. Employees should use Acme-Secure, authenticated via SSO, for access to internal resources."
+  },
+  {
+    "id": "kb-009",
+    "title": "Code of Conduct - Data Handling",
+    "category": "compliance",
+    "content": "Employees must not share customer data outside of approved internal tools. Any suspected data handling incident must be reported to the Security team within 24 hours."
+  },
+  {
+    "id": "kb-010",
+    "title": "Travel Booking Policy",
+    "category": "finance",
+    "content": "All business travel must be booked through the Acme Travel portal. Flights should be economy class for trips under 6 hours; exceptions require VP approval."
+  }
+]

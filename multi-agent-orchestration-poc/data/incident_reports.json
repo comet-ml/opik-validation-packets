@@ -1,0 +1,32 @@
+[
+  {
+    "id": "INC-2031",
+    "sku": "SKU-003",
+    "title": "Demand spike investigation - SKU-003",
+    "content": "Root cause: a regional promotional campaign in the US-East territory ran for 2 weeks, driving SKU-003 demand to roughly 3x the trailing 8-week average. Marketing confirmed the promotion; no data quality issue found. Recommend a temporary reorder-point increase until the promotion ends."
+  },
+  {
+    "id": "INC-2032",
+    "sku": "SKU-005",
+    "title": "Demand drop investigation - SKU-005",
+    "content": "Root cause: a competitor launched a directly competing product in EU-Central two weeks ago. Sales confirms several accounts have shifted purchasing to the competitor. Demand is not expected to recover without a pricing or marketing response."
+  },
+  {
+    "id": "INC-1987",
+    "sku": "SKU-002",
+    "title": "Temporary stock-out - SKU-002 (resolved)",
+    "content": "A carrier delay at the US-West distribution center caused a 4-day stock-out for SKU-002 last quarter. Resolved once the delayed shipment arrived; no ongoing demand anomaly."
+  },
+  {
+    "id": "INC-2010",
+    "sku": "SKU-001",
+    "title": "Seasonal dip - SKU-001 (expected)",
+    "content": "SKU-001 shows a predictable ~10% demand dip every year in this period due to seasonal buying patterns. This is expected and does not require investigation."
+  },
+  {
+    "id": "INC-2045",
+    "sku": null,
+    "title": "Warehouse management system migration - reporting note",
+    "content": "The warehouse management system was migrated to a new vendor over a 2-week period company-wide. Some inventory reports during the migration window may have lagged by up to 24 hours. This is a data-quality note, not a demand anomaly."
+  }
+]
