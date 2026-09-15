@@ -34,8 +34,11 @@ product: click the grid icon in the top navigation bar (next to the account avat
 ├── multi-agent-orchestration-poc/   Real Microsoft Agent Framework multi-agent demand
 │                                    forecasting flow: tracing, online eval, failure/retry
 │                                    detection, dashboard
-└── mpm-monitoring-poc/              Model production monitoring validation packet
+├── mpm-monitoring-poc/              Model production monitoring validation packet
+└── agentic-sdlc-poc/                GitHub Copilot + Spec-Kit SDLC observability: session
+                                     tracing, human oversight tracking, governance/risk
+                                     monitoring, cost/ROI visibility
 ```
 
 Each directory has its own `README.md` with full setup and step-by-step usage — start there for
-anything packet-specific. This file only covers what's common across all three.
+anything packet-specific. This file only covers what's common across all four.

@@ -1,0 +1,4 @@
+opik>=2.2.0
+openai>=1.0.0
+opentelemetry-exporter-otlp-proto-http
+python-dotenv
