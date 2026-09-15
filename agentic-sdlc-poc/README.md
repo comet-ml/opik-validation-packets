@@ -24,9 +24,8 @@ since Copilot's own managed exporter never touches the Opik SDK either.
 
 A customer cannot modify GitHub Copilot's own closed-source code — the only levers a real org admin
 has are the OTLP endpoint/protocol, exporter headers, the `captureContent` on/off toggle, and OTel
-resource attributes (and even that last one doesn't reach Opik — see below). So this harness never
-opens its own Opik SDK trace or attaches custom tags/metadata; it only emits attributes that are part
-of Copilot's real, documented schema.
+resource attributes. So this harness never opens its own Opik SDK trace or attaches custom tags/
+metadata; it only emits attributes that are part of Copilot's real, documented schema.
 
 ## The OTel schema
 
@@ -52,44 +51,6 @@ that text can contain proprietary code or secrets. Steps 01–02 run with `captu
 it on for the first time to demonstrate a sensitive-data scan — see that step's own docs for why this
 is framed as a discussion point, not a recommendation.
 
-## Key limitations found while building this
-
-- **Developer identity has no path into Opik at all.** Real Copilot telemetry carries no attribute
-  that identifies the developer behind a turn, and the one theoretical alternative — injecting
-  identity via OTel *resource*-level attributes in the managed telemetry config — doesn't work either:
-  Opik's OTLP ingestion only reads span-level attributes and ignores the resource block entirely. This
-  is a real product gap, not something this packet works around silently — every step prints a loud
-  callout before showing a "harness-only" developer breakdown for narrative purposes.
-- **`team` is reconstructible, but only via an external join.** `github.copilot.git.repository` is a
-  real, queryable attribute (it lands in `trace.input`). Steps 01/02/04 join it against
-  `repo_team_map.py`, standing in for a mapping a real customer already owns (CODEOWNERS, service
-  catalog, org chart) — not something Opik or Copilot's telemetry can tell you on its own.
-- **`workflow_step` (which slash command a turn represents) is only partially recoverable.** No real
-  Copilot attribute names the slash command. The only structural signal available is whether a turn's
-  span tree contains an `applyPatch`/`runTests` call, which coarsely identifies `/implement` turns —
-  `/specify` vs `/plan` vs `/tasks` are not distinguishable from each other without content capture.
-- **Content capture is all-or-nothing.** There's no granular "capture tool arguments but not chat
-  prompts" control — it's one switch for every prompt/completion/tool-argument, org-wide. Turning it
-  on to detect sensitive data means accepting that the same content also now flows through telemetry.
-- **A backend race can mis-score `edit_accepted` on a small fraction of traces.** Step 02's online
-  rule scores whether a turn's code edits were accepted, using each trace's full span tree. Under OTLP
-  batch ingestion, the scoring job can occasionally fire before that trace's own spans have finished
-  writing, so the rule reads an incomplete span list. Observed in testing: about 10% of scored traces
-  in one run were mis-scored this way (scored as "accepted" when an edit had actually been rejected).
-  There's no automatic retry — a wrong score stays wrong until the trace is rescored manually. Worth
-  filing as a product gap; not fixable from this packet.
-- **There's a real gap in the ROI metric.** Step 04 builds a real cost signal (token counts and an
-  approximate dollar figure) but can't complete an ROI number, because the return/productivity signal
-  (PR merge time, revert rate, cycle time) needs a delivery-outcome data source that's out of scope
-  for this build.
-- **Opik's OTLP ingestion only implements the traces endpoint** — not metrics or logs. A real managed
-  Copilot exporter would likely emit token-usage histograms and accept/reject counters as separate
-  OTel metric instruments; that path doesn't exist against Opik today. This packet represents all of
-  that as span attributes instead (token counts, `edit.accepted`, `feedback.vote`).
-- **Opik's OTLP ingestion is HTTP-only — there's no gRPC listener.** When configuring a real managed
-  telemetry export, the admin must select `otlp-http`. If `otlp-grpc` is chosen, spans never reach
-  Opik directly and an intermediary OTel Collector would be required.
-
 ## Project layout
 
 | File | Role |
@@ -102,7 +63,7 @@ is framed as a discussion point, not a recommendation.
 | `01_session_tracing/` | Step 01 — adoption/usage tracking. |
 | `02_oversight_tracking/` | Step 02 — human oversight tracking + an online-evaluation rule. |
 | `03_risk_governance/` | Step 03 — sensitive-data detection + an online-evaluation rule. |
-| `04_cost_roi/` | Step 04 — cost visibility and the ROI-metric gap. |
+| `04_cost_roi/` | Step 04 — cost and ROI visibility. |
 
 ## Setup
 
